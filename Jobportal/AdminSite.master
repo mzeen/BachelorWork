@@ -1,0 +1,57 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AdminSite.master.cs" Inherits="SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title></title>
+   <%-- <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />--%>
+   <link rel="stylesheet" type="text/css" href="style.css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server">
+    <div class="page">
+     <div class="meta">
+		<div class="metalinks">
+			&nbsp;<asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/images/meta1.gif" 
+                PostBackUrl="~/Default.aspx" />
+			<a href="#"><img src="images/meta2.gif" alt="" width="17" height="14" /></a>
+			<a href="#"><img src="images/meta3.gif" alt="" width="17" height="14" /></a>
+			<a href="#"><img src="images/meta4.gif" alt="" width="15" height="14" /></a>
+		</div>
+		<p>Recruiters: 
+            <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/About.aspx">Register</asp:LinkButton>
+            or <a href="#">Find out more</a></p>																																															<div class="inner_copy"><a href="http://www.greatdirectories.org/">web directories</a><a href="http://www.bestfreetemplates.info/">free CSS templates</a></div>
+	</div>
+
+		<a href="index.html" class="logo"><img src="images/logo.jpg" alt="setalpm" width="149" height="28" /></a>
+		<span class="slogan">Your Key to Success</span>
+		<ul id="menu">
+			<asp:Menu ID="Menu1" runat="server">
+                <Items>
+                    <asp:MenuItem Text="SETUP" Value="SETUP">
+                        <asp:MenuItem Text="INSERT CATEGORY" Value="INSERT CATEGORY"></asp:MenuItem>
+                        <asp:MenuItem Text="INSERT COUNTRY" Value="INSERT COUNTRY"></asp:MenuItem>
+                        <asp:MenuItem Text="INSERT CITY" Value="INSERT CITY"></asp:MenuItem>
+                        <asp:MenuItem Text="INSERT COMPANY" Value="INSERT COMPANY"></asp:MenuItem>
+                    </asp:MenuItem>
+                    <asp:MenuItem Text="INSERT JOB" Value="INSERT JOB"></asp:MenuItem>
+                    <asp:MenuItem Text="INSERT NEWS" Value="INSERT NEWS" NavigateUrl="~/NEWS.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="LOGOUT" Value="LOGOUT" NavigateUrl="~/Default.aspx"></asp:MenuItem>
+                </Items>
+            </asp:Menu>
+		</ul>
+		
+       <div id="content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+  <div id="footer">
+		Copyright &copy;. All rights reserved. Design by <a href="http://www.bestfreetemplates.info" target="_blank" title="Free CSS templates">BFT</a> 																																																						<div class="inner_copy"><a href="http://www.beautifullife.info/">beautiful</a><a href="http://www.grungemagazine.com/">grunge</a></div> 
+	</div>
+    </form>
+</body>
+</html>

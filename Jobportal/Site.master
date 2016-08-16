@@ -1,0 +1,66 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title></title>
+   <%-- <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />--%>
+   <link rel="stylesheet" type="text/css" href="style.css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server">
+    <div class="page">
+     <div class="meta">
+		<div class="metalinks">
+			&nbsp;<asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/images/meta1.gif" 
+                PostBackUrl="~/Default.aspx" />
+			<a href="#"><img src="images/meta2.gif" alt="" width="17" height="14" /></a>
+			<a href="#"><img src="images/meta3.gif" alt="" width="17" height="14" /></a>
+			<a href="#"><img src="images/meta4.gif" alt="" width="15" height="14" /></a>
+		</div>
+		<p>Recruiters: 
+            <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/About.aspx">Register</asp:LinkButton>
+            or <a href="#">Find out more</a></p>																																															<div class="inner_copy"><a href="http://www.greatdirectories.org/">web directories</a><a href="http://www.bestfreetemplates.info/">free CSS templates</a></div>
+	</div>
+	<div id="header">
+		<a href="index.html" class="logo"><img src="images/logo.jpg" alt="setalpm" width="149" height="28" /></a>
+		<span class="slogan">Your Key to Success</span>
+		<ul id="menu">
+			<asp:Menu ID="Menu1" runat="server">
+                <Items>
+                    <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home" Value="HOME">
+                    </asp:MenuItem>
+                    <asp:MenuItem Text="Search" Value="SEARCH" NavigateUrl="~/SEARCH.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="Sign Up" Value="SIGN UP" NavigateUrl="~/Register.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="Sign In" Value="SIGN IN" NavigateUrl="~/SignIn.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="Contact Us" Value="CONTACT US" NavigateUrl="~/About.aspx"></asp:MenuItem>
+                   <asp:MenuItem Text="SEARCH" Value="SEARCH">
+                            <asp:MenuItem NavigateUrl="~/MENU_WITHCOMMAND-1.aspx" Text="SEARCH BY MENU" 
+                                Value="SEARCH BY MENU"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/MENU_WITHCOMMAND-BY-MAPING-1-2.aspx" 
+                                Text="SEARCH URL MAPPING" Value="SEARCH URL MAPPING"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/DETAILMENU_WITHDATASET-4.aspx" 
+                                Text="DETAIL MENU WITH DATASET" Value="DETAIL MENU WITH DATASET">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/TREEWITHDATASET-3.aspx" Text="TREE BY DATASET" 
+                                Value="TREE BY DATASET"></asp:MenuItem>
+                        </asp:MenuItem>
+                </Items>
+            </asp:Menu>
+		</ul>
+		<img src="images/bigpicture.jpg" alt="" width="892" height="303" />
+	</div>
+       <div id="content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+   <div id="footer">
+		Copyright &copy;. All rights reserved. Design by <a href="http://www.bestfreetemplates.info" target="_blank" title="Free CSS templates">BFT</a> 																																																						<div class="inner_copy"><a href="http://www.beautifullife.info/">beautiful</a><a href="http://www.grungemagazine.com/">grunge</a></div> 
+	</div>
+    </form>
+</body>
+</html>
