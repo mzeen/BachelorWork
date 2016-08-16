@@ -17,9 +17,9 @@ public partial class AdTest : System.Web.UI.Page
     }
 	protected void AdRotator1_AdCreated(object sender, AdCreatedEventArgs e)
 	{
-		// Synchronize the Hyperlink control.
+		
 		lnkBanner.NavigateUrl = e.NavigateUrl;
-		// Synchronize the text of the link.
+		
 		lnkBanner.Text = "Click here for information about our sponsor: ";
 		lnkBanner.Text += e.AlternateText;
 	}

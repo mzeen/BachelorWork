@@ -11,16 +11,11 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
 using System.Data.SqlClient;
-//for email
 using System.Net.Mail;
 using System.Net;
-//sql
 using System.Data;
-//sql conn
 using System.Data.SqlClient;
-//hasing
 using System.Web.Security;
-//system config from web
 using System.Configuration;
 
 using System.Windows.Forms;
@@ -50,7 +45,6 @@ public partial class SIGNUP : System.Web.UI.Page
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "usp_Insert_CUSTOMER";
 
-            // Add the input parameter and set its value 
 
             SqlParameter param_CUSTOMER_NAME = new SqlParameter("@CUSTOMER_NAME", SqlDbType.VarChar, 100);
             SqlParameter param_EMAIL_ID = new SqlParameter("@EMAIL_ID", SqlDbType.VarChar, 50);
@@ -82,12 +76,9 @@ public partial class SIGNUP : System.Web.UI.Page
 
             param_MEM_TYPE.Value = "M".ToString();
             param_ACTIVE.Value = "Inactive".ToString();
-            //param_DOB.Value = this.txtDOB.Text + " 00:00:00 AM".ToString();
-            // Add the output parameter and set its direction 
             param_CUSTOMER_ID.Direction = ParameterDirection.Output;
             param_UNEMAIL_ID.Direction = ParameterDirection.Output;
 
-            //add paramaemter in command
             cmd.Parameters.Add(param_CUSTOMER_NAME);
             cmd.Parameters.Add(param_EMAIL_ID);
             cmd.Parameters.Add(param_COUNTRY_ID);
@@ -145,9 +136,7 @@ public partial class SIGNUP : System.Web.UI.Page
     }
     protected void AdRotator1_AdCreated(object sender, AdCreatedEventArgs e)
     {
-        // Synchronize the Hyperlink control.
         lnkBanner.NavigateUrl = e.NavigateUrl;
-        // Synchronize the text of the link.
         lnkBanner.Text = "Click here for information about our sponsor: ";
         lnkBanner.Text += e.AlternateText;
     }
@@ -162,7 +151,6 @@ public partial class SIGNUP : System.Web.UI.Page
         int mail_smtpport = mn.Mail_smtpport();
 
         string webadd="www.abc.com";
-        /////////////////////////////////////////////////SMTP Settings///////////////////////
         SmtpClient client = new SmtpClient(mail_smtp, mail_smtpport);
 
         client.EnableSsl = true;
@@ -210,7 +198,6 @@ public partial class SIGNUP : System.Web.UI.Page
         NetworkCredential myCreds = new NetworkCredential(mail_email, mail_pass, "");
         
         client.Credentials = myCreds;
-        /////////////////////////////////////////////////////////////////////////////////////
         try
         {
             client.Send(message);
@@ -220,7 +207,6 @@ public partial class SIGNUP : System.Web.UI.Page
         catch (Exception ex)
         {
 
-            //Response.Write("Problem with Mail Server");
 
             this.pnlinfo.Visible = true;
             lblErrorMsg.Visible = true;

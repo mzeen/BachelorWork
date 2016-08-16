@@ -12,7 +12,7 @@ public partial class ButtonPallet : System.Web.UI.UserControl
 
     public int Style
     {
-        // Return the containing Panel control's style attribute.
+
         get 
         { 
             return 1; 
@@ -20,11 +20,9 @@ public partial class ButtonPallet : System.Web.UI.UserControl
 
         set
         {
-            // Set the containing Panel control's style attribute.
             switch (value)
             {
                 case 1:
-                    //For step button
                     RefValue = 1;
                     btnNext.Enabled = true;
                     btnPrev.Enabled = false;
@@ -33,7 +31,6 @@ public partial class ButtonPallet : System.Web.UI.UserControl
                     break;
 
                 case 2:
-                    //For step button
                     RefValue = 2;
                     btnNext.Enabled = true;
                     btnPrev.Enabled = true;
@@ -41,7 +38,6 @@ public partial class ButtonPallet : System.Web.UI.UserControl
                     btnFirst.Enabled = true;
                     break;
                 case 3:
-                    //For step button
                     RefValue = 3;
                     btnNext.Enabled = true;
                     btnPrev.Enabled = true;

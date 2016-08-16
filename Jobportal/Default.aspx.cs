@@ -22,15 +22,4 @@ public partial class _Default : System.Web.UI.Page
     {
         Response.Redirect("Search2.aspx?PROD_NAME="+TextBox2.Text);
     }
-    //protected void Repeater1_ItemDataBound(object sender, RepeaterItemEventArgs e)
-    //{
-    //    if (Repeater1.Items.Count < 1)
-    //    {
-    //        if (e.Item.ItemType == ListItemType.Footer)
-    //        {
-    //            Label lblFooter = (Label)e.Item.FindControl("lblEmptyDataD");
-    //            lblFooter.Visible = true;
-    //        }
-    //    }
-    //}
 }

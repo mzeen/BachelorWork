@@ -4,13 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-//sql
 using System.Data;
-//sql conn
 using System.Data.SqlClient;
-//hasing
 using System.Web.Security;
-//system config from web
 using System.Configuration;
 public partial class login : System.Web.UI.Page
 {
@@ -69,6 +65,3 @@ public partial class login : System.Web.UI.Page
 
     }
 }
-
-   
-

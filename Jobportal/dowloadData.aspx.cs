@@ -8,16 +8,12 @@ using System.Web.UI.WebControls;
 using System.Configuration;
 using System.Data.SqlClient;
 
-//FILE AND DIRECTORY
 using System.IO;
 
-//ARRAY LIST
 using System.Collections;
 
-//FOR DATA TABLE
 using System.Data;
 
-//FOR MESSEGE
 
 using System.Windows.Forms;
 
@@ -40,13 +36,9 @@ public partial class dowloadData : System.Web.UI.Page
     {
         MessageBox.Show("Do you want to update this record", "hdf_1");
 
-        //first all previous scripts will be deleted
         File.Delete("c:\\SCRIPTS\\SQL\\PRODUCT_INSERT.sql");
        
         File.Delete("c:\\SCRIPTS\\SQL\\PRODUCT_UPDATE.sql");
-
-        //------------------------------------------------------
-
 
         string CAT_ID = "";
 

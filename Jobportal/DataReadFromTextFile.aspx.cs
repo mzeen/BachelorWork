@@ -33,14 +33,14 @@ public partial class UploadAttachFile : System.Web.UI.Page
             }
             else
             {
-                //Code to read from selected File
+                
                 string strFileName = null;
 		        string txtFile = null;
 
-                // Get the name of the file to upload.
+                
                 string fileName = fileToRead.FileName;
 
-                // Create the path and file name to get data
+                
                  strFileName = savePath + fileName;
                 	                
                 FileStream fs = new FileStream(strFileName, FileMode.Open);
@@ -59,7 +59,7 @@ public partial class UploadAttachFile : System.Web.UI.Page
 
                         Label1.Text = txtFile;
 
-                //fs = new FileStream(strFileName, FileMode.Create);
+                
 				fs.Close();
 
                 if (intLength == 0)
@@ -67,14 +67,13 @@ public partial class UploadAttachFile : System.Web.UI.Page
                     File.Delete(strFileName);
                 }
 
-                //SaveFileName(fileToRead.PostedFile);
-                //Response.Redirect("ImageSave.aspx");
+                
             }
         }
 
 		catch (Exception ex) 
         {
-			// Otherwise set failure.
+			
 			pnlinfo.Visible = true;
 			lblMESSAGE.Text = "File could not be uploaded." + ex.Message;
 		}
@@ -115,7 +114,7 @@ public partial class UploadAttachFile : System.Web.UI.Page
 
 			catch (Exception ex) 
             {
-				// Otherwise set failure.
+			
 				pnlinfo.Visible = true;
 				lblMESSAGE.Text = "File could not be uploaded." + "";
 			}
@@ -127,7 +126,7 @@ public partial class UploadAttachFile : System.Web.UI.Page
 	private bool chkFileEXT()
 	{
 		bool chkFile = false;
-		//   Dim path As String = Server.MapPath("~/Images/")
+		
 		bool fileOK = false;
 
 		if (fileToRead.HasFile) 
@@ -166,40 +165,33 @@ public partial class UploadAttachFile : System.Web.UI.Page
 		bool bSuccess = false;
        
   
-		// Get the name of the file to upload.
+		
 		string fileName = fileToRead.FileName;
 
-		// Create the path and file name to check for duplicates.
+		
 		string pathToCheck = savePath + fileName;
 
-		// Create a temporary file name to use for checking duplicates.
+		
 		string tempfileName = null;
 
-		// Check to see if a file already exists with the
-		// same name as the file to upload.        
+		
 		if ((System.IO.File.Exists(pathToCheck))) 
         {
 			int counter = 2;
 			while ((System.IO.File.Exists(pathToCheck)))
             {
-				// If a file with this name already exists,
-				// prefix the filename with a number.
 				tempfileName = counter.ToString() + fileName;
 				pathToCheck = savePath + tempfileName;
 				counter = counter + 1;
 			}
 
 
-			// Notify the user that the file name was changed.
-
+		
 			bSuccess = false;
 		}
 		else 
         {
-
-			//' Notify the user that the file was saved successfully.
-			//UploadStatusLabel.Text = "Your file was uploaded successfully."
-			bSuccess = true;
+		bSuccess = true;
 		}
 
 		return bSuccess;
@@ -209,17 +201,14 @@ public partial class UploadAttachFile : System.Web.UI.Page
     public void SaveFileName(HttpPostedFile file)
 	{
 
-        //Code to read from selected File
+    
         string strFileName = null;
       
-        // Get the name of the file to upload.
+    
         string fileName = fileToRead.FileName;
 
-        // Create the path and file name to get data
+    
         strFileName = savePath + fileName;
-                	                
-		// Call the SaveAs method to save the uploaded
-		// file to the specified directory.
         file.SaveAs(strFileName);
        
     }

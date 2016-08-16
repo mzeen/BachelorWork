@@ -79,48 +79,11 @@ public partial class City : System.Web.UI.Page
         txtCITY.Text = ((Label)GridView1.SelectedRow.FindControl("LBLCITY")).Text;
         drpCountry.SelectedValue = ((Label)GridView1.SelectedRow.FindControl("COUNTRYID")).Text;
     }
-    //protected void CBALL_CheckedChanged(object sender, EventArgs e)
-    //{
-    //    CheckBox showCheckBox = (CheckBox)sender;
-    //    if (showCheckBox.Checked)
-    //    {
-
-    //        ShowCheck(true);
-    //    }
-
-    //    else
-    //    {
-
-    //        ShowCheck(false);
-
-    //    }
-    //}
-
-    //public void ShowCheck(bool show)
-    //{
-    //    foreach (GridViewRow row in GridView1.Rows)
-    //    {
-    //        CheckBox cb = (CheckBox)row.FindControl("CB");
-
-    //        cb.Checked = show;
-
-    //    }
-    //}
 
     protected void Button4_Click(object sender, EventArgs e)
     {
 
     }
-    //protected void CB_CheckedChanged(object sender, EventArgs e)
-    //{
-    //    CheckBox chk =(CheckBox)sender;
-
-    //    if (chk.Checked)
-    //        show(true);
-    //    else
-    //        show(false);
-
-    //}
 
     private void show(bool sh)
     {

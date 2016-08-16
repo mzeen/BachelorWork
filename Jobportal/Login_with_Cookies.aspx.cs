@@ -4,13 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-//sql
 using System.Data;
-//sql conn
 using System.Data.SqlClient;
-//hasing
 using System.Web.Security;
-//system config from web
 using System.Configuration;
 public partial class login : System.Web.UI.Page
 {
@@ -43,15 +39,11 @@ public partial class login : System.Web.UI.Page
         {
             if (this.chkCook.Checked)
             {
-                // Create a cookie.
                 HttpCookie cookUserInfo = new HttpCookie("UserInfo");
-                // Fill in the keys from the form data.
                 cookUserInfo["UserName"] = this.email.Text;
                 cookUserInfo["Password"] = this.password.Text;
 
-                // Set the expiration.
                 cookUserInfo.Expires = DateTime.Now.AddDays(30);
-                // Add the cookie.
                 Response.Cookies.Add(cookUserInfo);
             }
         }
@@ -92,11 +84,7 @@ public partial class login : System.Web.UI.Page
     {
         if (Request.Cookies["UserInfo"] != null)
         {
-            // Get the cookie.
             HttpCookie cookUserInfo = Request.Cookies["UserInfo"];
-            // Display a message showing time of last visit.
-           // litMessage.Text = "user name, pwd: " +
-             //   cookUserInfo.Values;
             this.email.Text = cookUserInfo["UserName"];
             this.password.Text = cookUserInfo["Password"];
             this.Label1.Text = cookUserInfo["Password"];
@@ -105,6 +93,3 @@ public partial class login : System.Web.UI.Page
 
     }
 }
-
-   
-

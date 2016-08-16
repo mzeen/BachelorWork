@@ -35,15 +35,11 @@ public partial class MENU_WITHCOMMAND : System.Web.UI.Page
             for (int i = 0; i <= totalRec - 1; i++)
             {
 
-                // Create the new node. Notice that the CategoryId is stored in the Value property 
-                // of the node. This will make querying for items in a specific category easier when
-                           
                 MenuItem newNode = new MenuItem();
 
                 newNode.Text = (aDataTable.Rows[i]["CategoryName"]).ToString();
                 newNode.Value = (aDataTable.Rows[i]["CategoryID"]).ToString();
                
-               // // Create the child node. Notice that the CategoryId is stored in the Value property 
 
                 DataTable bDataTable;
                 SqlDataAdapter bAdapter;
@@ -60,7 +56,6 @@ public partial class MENU_WITHCOMMAND : System.Web.UI.Page
                 {
                     for (int j = 0; j <= btotalRec - 1; j++)
                     {
-                  // Create the child node.
                     
                         MenuItem childNode = new MenuItem();
 
@@ -71,7 +66,6 @@ public partial class MENU_WITHCOMMAND : System.Web.UI.Page
                     }
 
                 }
-                // Add the new node to the parent and ChildNodes collection of the parent node.
             
                 PartsMenu.Items.Add(newNode);
                 
